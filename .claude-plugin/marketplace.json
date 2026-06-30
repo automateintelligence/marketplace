@@ -1,0 +1,17 @@
+{
+  "name": "automateintelligence",
+  "description": "Conductor + spec-craft: turn a spec into a machine-checked definition of done, then drive it to completion autonomously.",
+  "owner": { "name": "Jeffrey A. Daniels" },
+  "plugins": [
+    {
+      "name": "conductor",
+      "source": { "source": "url", "url": "https://github.com/automateintelligence/conductor.git" },
+      "description": "Autonomous spec-completion loop: spec -> plans -> phases -> machine-checked done."
+    },
+    {
+      "name": "spec-craft",
+      "source": { "source": "url", "url": "https://github.com/automateintelligence/spec-craft.git" },
+      "description": "Make a spec's definition of done explicit and machine-checkable."
+    }
+  ]
+}
