@@ -1,6 +1,6 @@
 {
   "name": "automateintelligence",
-  "description": "Conductor + spec-craft: turn a spec into a machine-checked definition of done, then drive it to completion autonomously.",
+  "description": "Conductor, spec-craft, and bubo: spec-driven autonomous completion plus a passive code review companion.",
   "owner": { "name": "Jeffrey A. Daniels" },
   "plugins": [
     {
@@ -12,6 +12,11 @@
       "name": "spec-craft",
       "source": { "source": "url", "url": "https://github.com/automateintelligence/spec-craft.git" },
       "description": "Make a spec's definition of done explicit and machine-checkable."
+    },
+    {
+      "name": "bubo",
+      "source": { "source": "url", "url": "https://github.com/automateintelligence/bubo.git" },
+      "description": "Passive code review companion: one clipped, in-character note when something is likely to break — inert until explicitly promoted."
     }
   ]
 }
