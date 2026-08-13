@@ -1,12 +1,12 @@
 {
   "name": "automateintelligence",
-  "description": "Conductor, spec-craft, and bubo: spec-driven autonomous completion plus a passive code review companion.",
+  "description": "Conductor, spec-craft, and bubo: spec-driven autonomous completion plus a passive code review companion. Claude Code today; OpenAI Codex support in development.",
   "owner": { "name": "Jeffrey A. Daniels" },
   "plugins": [
     {
       "name": "conductor",
       "source": { "source": "url", "url": "https://github.com/automateintelligence/conductor.git" },
-      "description": "Autonomous spec-completion loop: spec -> plans -> phases -> machine-checked done."
+      "description": "Autonomous spec-completion loop: spec -> plans -> phases -> machine-checked done. Runs on Claude Code; OpenAI Codex host support in development."
     },
     {
       "name": "spec-craft",
