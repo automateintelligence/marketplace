@@ -17,27 +17,26 @@ then makes "done" machine-checkable.
 
 ## Install
 
+This is the plugin install for every plugin in the catalog. Each plugin's own README (linked
+in the table above) repeats its install and also covers running it **without** the plugin,
+from a clone.
+
+### Claude Code
+
 Add the marketplace once, then install any plugin:
 
 ```
 /plugin marketplace add automateintelligence/marketplace
-/plugin install spec-craft@automateintelligence     # spec-craft on its own
 /plugin install conductor@automateintelligence      # conductor + spec-craft (auto-installed dependency)
+/plugin install spec-craft@automateintelligence     # spec-craft on its own
 /plugin install bubo@automateintelligence           # bubo on its own
 ```
 
-CLI equivalents:
+CLI equivalents: `claude plugin marketplace add automateintelligence/marketplace`, then
+`claude plugin install <plugin>@automateintelligence`.
 
-```bash
-claude plugin marketplace add automateintelligence/marketplace
-claude plugin install spec-craft@automateintelligence
-claude plugin install conductor@automateintelligence
-claude plugin install bubo@automateintelligence
-```
-
-`conductor` declares `spec-craft` as a dependency, so installing conductor pulls spec-craft
-automatically. Installing `spec-craft` alone pulls only spec-craft. `bubo` is fully
-standalone — it is never installed alongside the others unless you ask for it.
+`conductor` declares `spec-craft` as a dependency, so on Claude Code installing conductor
+pulls spec-craft automatically. `bubo` is fully standalone.
 
 ### OpenAI Codex
 
@@ -48,10 +47,13 @@ install spec-craft alongside conductor explicitly:
 codex plugin marketplace add automateintelligence/marketplace
 codex plugin add conductor@automateintelligence
 codex plugin add spec-craft@automateintelligence
-codex plugin add bubo@automateintelligence           # optional; its live-review skill loads on Codex
 ```
 
 On Codex, plugin skills are invoked by their qualified names, e.g. `$conductor:start`.
+
+**bubo on Codex** is set up from a clone, not from this catalog: the plugin would add only its
+skill, which needs the Bubo CLI from the clone. See
+[bubo's install guide](https://github.com/automateintelligence/bubo#installation).
 
 ## How it works
 
