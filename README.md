@@ -1,6 +1,6 @@
-# automateintelligence — Claude Code plugin marketplace
+# automateintelligence — Claude Code and OpenAI Codex plugin marketplace
 
-The catalog for AutomateIntelligence's Claude Code plugins. It lists three plugins, each
+The catalog for AutomateIntelligence's plugins, installable from Claude Code and OpenAI Codex. It lists three plugins, each
 maintained in its own repo:
 
 | Plugin | What it does | Repo |
@@ -39,9 +39,23 @@ claude plugin install bubo@automateintelligence
 automatically. Installing `spec-craft` alone pulls only spec-craft. `bubo` is fully
 standalone — it is never installed alongside the others unless you ask for it.
 
+### OpenAI Codex
+
+Codex (0.155.0+) reads this same catalog. Codex does not resolve plugin dependencies, so
+install spec-craft alongside conductor explicitly:
+
+```bash
+codex plugin marketplace add automateintelligence/marketplace
+codex plugin add conductor@automateintelligence
+codex plugin add spec-craft@automateintelligence
+codex plugin add bubo@automateintelligence           # optional; its live-review skill loads on Codex
+```
+
+On Codex, plugin skills are invoked by their qualified names, e.g. `$conductor:start`.
+
 ## How it works
 
 This repo ships only `.claude-plugin/marketplace.json` — a catalog whose entries point at the
-plugin repos by git URL. The plugin code lives in the plugin repos, not here. Marketplace
+plugin repos by git URL. Claude Code and Codex both read it. The plugin code lives in the plugin repos, not here. Marketplace
 installs track each repo's default branch; pin a `ref`/`sha` in the catalog entry to freeze a
 version.
