@@ -47,12 +47,14 @@ install spec-craft alongside conductor explicitly:
 codex plugin marketplace add automateintelligence/marketplace
 codex plugin add conductor@automateintelligence
 codex plugin add spec-craft@automateintelligence
+codex plugin add bubo@automateintelligence           # standalone
 ```
 
 On Codex, plugin skills are invoked by their qualified names, e.g. `$conductor:start`.
 
-**bubo on Codex** is set up from a clone, not from this catalog: the plugin would add only its
-skill, which needs the Bubo CLI from the clone. See
+**bubo on Codex:** the plugin install gives you the `$bubo:bubo-live-review` skill and its
+hooks (Codex asks you to approve them), with the Bubo CLI bundled. Codex plugins cannot add
+slash commands, so for a native `/bubo` prompt and the `codex-bubo` launcher see
 [bubo's install guide](https://github.com/automateintelligence/bubo#installation).
 
 ## How it works
