@@ -52,9 +52,10 @@ codex plugin add bubo@automateintelligence           # standalone
 
 On Codex, plugin skills are invoked by their qualified names, e.g. `$conductor:start`.
 
-**bubo on Codex:** the plugin install gives you the `$bubo:bubo-live-review` skill and its
-hooks (Codex asks you to approve them), with the Bubo CLI bundled. Codex plugins cannot add
-slash commands, so for a native `/bubo` prompt and the `codex-bubo` launcher see
+**bubo on Codex:** after `codex plugin add bubo@automateintelligence`, approve its hooks when
+Codex asks and start plain `codex` — no launcher. The hooks run Bubo's passive review; type Bubo
+commands in plain words (`bubo status`, `bubo review`). Codex plugins cannot add slash commands,
+so `/bubo` needs bubo's clone setup — see
 [bubo's install guide](https://github.com/automateintelligence/bubo#installation).
 
 ## How it works
