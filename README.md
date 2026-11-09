@@ -8,7 +8,7 @@ maintained in its own repo:
 | **conductor** | Autonomous spec-completion loop: spec → plans → phases → machine-checked done. Works best with specs authored via SuperPowers or GitHub's spec-kit. Depends on `spec-craft`. | [automateintelligence/conductor](https://github.com/automateintelligence/conductor) |
 | **spec-craft** | Make a spec's definition of done explicit and machine-checkable. Standalone, conductor-agnostic. | [automateintelligence/spec-craft](https://github.com/automateintelligence/spec-craft) |
 | **bubo** | Passive code review companion: one clipped, in-character note when something is likely to break — inert until explicitly promoted. Standalone. | [automateintelligence/bubo](https://github.com/automateintelligence/bubo) |
-| **marshal** | A manager session for your other Claude Code sessions: shared worker rules in every session, the grilling and handoff skills, and `/marshal:init` to create your private Marshal workspace. Standalone. Claude Code only for now. | [automateintelligence/marshal](https://github.com/automateintelligence/marshal) |
+| **marshal** | A manager session for your other Claude Code sessions: shared worker rules in every session, the grilling and handoff skills by Matt Pocock ([mattpocock/skills](https://github.com/mattpocock/skills)), and `/marshal:init` to create your private Marshal workspace. Standalone. Claude Code only for now. | [automateintelligence/marshal](https://github.com/automateintelligence/marshal) |
 
 `conductor` works best with specs authored using
 [SuperPowers](https://github.com/obra/superpowers) or
@@ -78,7 +78,7 @@ Marshal:
 
 Marshal has two parts:
 
-1. **The plugin** (installed from the marketplace into Claude Code). It goes to EVERY session you run, in any repo: a SessionStart hook hands each session the worker rules in `docs/worker-rules.md` (how to ask you questions, review loops, reporting, naming, no flaky tests), so you do not edit `~/.claude/CLAUDE.md`. It also carries the skills `/marshal:handoff`, `/marshal:grilling`, `/marshal:grill-with-docs` and `/marshal:domain-modeling`, and the command `/marshal:init` that creates your workspace.
+1. **The plugin** (installed from the marketplace into Claude Code). It goes to EVERY session you run, in any repo: a SessionStart hook hands each session the worker rules in `docs/worker-rules.md` (how to ask you questions, review loops, reporting, naming, no flaky tests), so you do not edit `~/.claude/CLAUDE.md`. It also carries four skills written by Matt Pocock and copied unmodified from his repo [mattpocock/skills](https://github.com/mattpocock/skills) (MIT): `/marshal:handoff`, `/marshal:grilling`, `/marshal:grill-with-docs` and `/marshal:domain-modeling`; see Credits. It adds the command `/marshal:init` that creates your workspace.
 2. **Your Marshal workspace.** Your own repo, PRIVATE, holding `CLAUDE.md`, `state/` and `docs/` for the Marshal session itself. Create it with `/marshal:init`, or use the public Marshal repo (github.com/automateintelligence/marshal) as a template.
 
 ### Install on Claude Code
