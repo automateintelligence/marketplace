@@ -1,6 +1,6 @@
 {
   "name": "automateintelligence",
-  "description": "Conductor, spec-craft, and bubo: spec-driven autonomous completion plus a passive code review companion. Installable from Claude Code and OpenAI Codex.",
+  "description": "Conductor, spec-craft, bubo, and Marshal: spec-driven autonomous completion, a passive code review companion, and a manager for your other Claude Code sessions. Conductor, spec-craft and bubo install from Claude Code and OpenAI Codex. Marshal is Claude Code only (OpenAI Codex: not supported yet).",
   "owner": { "name": "Jeffrey A. Daniels" },
   "plugins": [
     {
@@ -17,6 +17,11 @@
       "name": "bubo",
       "source": { "source": "url", "url": "https://github.com/automateintelligence/bubo.git" },
       "description": "Passive code review companion: one clipped, in-character note when something is likely to break — inert until explicitly promoted."
+    },
+    {
+      "name": "marshal",
+      "source": { "source": "url", "url": "https://github.com/automateintelligence/marshal.git" },
+      "description": "Marshal: a manager session for your other Claude Code sessions. The plugin puts shared worker rules and the grilling and handoff skills in every session, and /marshal:init creates your private Marshal workspace. Claude Code only. OpenAI Codex: not supported yet."
     }
   ]
 }
