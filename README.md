@@ -64,9 +64,17 @@ so `/bubo` needs bubo's clone setup — see
 
 ## Marshal
 
-Marshal is one Claude Code session that manages your other Claude Code sessions: it watches them (tmux panes, transcripts, repos, PRs) and relays your decisions to the right one at once.
-It makes the easy calls for you under rules you set, says so, and asks you the hard ones as short a/b/c questions in plain language.
-It keeps what it knows in `state/*.md`, committed to git, and never writes product code itself.
+Marshal is one Claude Code session that manages your other Claude Code sessions. You keep doing the work in
+as many sessions as you like (different projects, different repos, tmux windows on a server or local). 
+
+Marshal:
+- watches them (tmux panes, transcripts, repos, PRs),
+- relays your decisions to the right session via messaging,
+- makes the easy calls for you under rules you set, and says so,
+- asks you the hard questions as short y/n or labeled a/b/c questions in plain language with context 
+  and consequences of the decisions,
+- keeps what it knows in `state/*.md`, committed to git, so a restart or a new machine loses nothing,
+- never writes product code itself.
 
 Marshal has two parts:
 
