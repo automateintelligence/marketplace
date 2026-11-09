@@ -100,13 +100,13 @@ Marshal has two parts:
 4. Create your workspace: a new folder with Marshal's rules and your `state/`. Claude copies the templates, runs `git init`, installs a push guard and walks you through the `{{placeholders}}`:
 
    ```
-   /marshal:init ~/marshal-workspace
+   /marshal:init ~/marshal
    ```
 
 5. Put the workspace in your own PRIVATE repo (replace `<you>` with your GitHub name):
 
    ```
-   cd ~/marshal-workspace && git init && git add -A && git commit -m "Marshal workspace" && gh repo create <you>/my-marshal --private --source . --remote github --push
+   cd ~/marshal && git init && git add -A && git commit -m "Marshal workspace" && gh repo create <you>/my-marshal --private --source . --remote github --push
    ```
 
    Never fork the public Marshal repo for your workspace (a fork of a public repo is public), and never push your filled-in `state/` to the public Marshal repo.
@@ -114,7 +114,7 @@ Marshal has two parts:
 6. Start Marshal in that folder with Remote Control (`<where>` is `local`, `wsl`, `srv` or `cloud`), then paste the two loop prompts from [The two loops](https://github.com/automateintelligence/marshal#the-two-loops):
 
    ```
-   cd ~/marshal-workspace && claude --remote-control '[MSL] OPS: Marshal -<where>'
+   cd ~/marshal && claude --remote-control '[MSL] OPS: Marshal -<where>'
    ```
 
 Template route, instead of steps 4 and 5 (the public Marshal repo is the template; the plugin from steps 1 to 3 still gives every session the worker rules):
